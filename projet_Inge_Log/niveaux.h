@@ -12,11 +12,12 @@ class niveaux:public QObject
 public:
     niveaux();
 private:
-    string Name;
-    string Creator;
-    QDate Creation;
-    QDate LastModication;
-    map<int, map<int, string>> Composition;
+    int id;
+    string name;
+    string creator;
+    QDate creation;
+    QDate lastModication;
+    map<int, map<int, string>> composition;
 };
 
 #endif // NIVEAUX_H

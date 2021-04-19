@@ -18,6 +18,7 @@ SOURCES += \
     niveaux.cpp \
     obstacles.cpp \
     start.cpp \
+    tests.cpp \
     trap.cpp \
     wall.cpp
 
@@ -29,6 +30,7 @@ HEADERS += \
     niveaux.h \
     obstacles.h \
     start.h \
+    tests.h \
     trap.h \
     wall.h
 
