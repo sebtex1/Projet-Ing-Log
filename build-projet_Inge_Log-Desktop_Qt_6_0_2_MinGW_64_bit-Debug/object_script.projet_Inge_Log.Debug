@@ -1,0 +1,15 @@
+debug/bdd.o
+debug/finish.o
+debug/main.o
+debug/mainwindow.o
+debug/mud.o
+debug/niveaux.o
+debug/obstacles.o
+debug/pathfinders.o
+debug/start.o
+debug/trap.o
+debug/wall.o
+debug/moc_bdd.o
+debug/moc_mainwindow.o
+debug/moc_niveaux.o
+debug/moc_obstacles.o
