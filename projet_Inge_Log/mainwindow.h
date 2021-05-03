@@ -45,6 +45,7 @@ private:
     int height;
     bool random;
     int start_x;
+    int start_x_box;
     int start_y;
     int goal_x;
     int goal_y;
