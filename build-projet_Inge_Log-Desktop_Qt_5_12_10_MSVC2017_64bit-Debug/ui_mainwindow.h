@@ -160,19 +160,19 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Labyrinth size and attributes", nullptr));
-        random_no->setText(QApplication::translate("MainWindow", "No", nullptr));
+        groupBox->setTitle(QApplication::translate("MainWindow", "Attributs et taille du labyrinthe", nullptr));
+        random_no->setText(QApplication::translate("MainWindow", "Non", nullptr));
         goal_y_label->setText(QApplication::translate("MainWindow", "Y:", nullptr));
         goal_x_label->setText(QApplication::translate("MainWindow", "X:", nullptr));
         show_button->setText(QApplication::translate("MainWindow", "Show", nullptr));
-        start_label->setText(QApplication::translate("MainWindow", "Start :", nullptr));
-        height_label->setText(QApplication::translate("MainWindow", "Height", nullptr));
-        width_label->setText(QApplication::translate("MainWindow", "Width", nullptr));
-        random_label->setText(QApplication::translate("MainWindow", "Choose start and goal position randomly?", nullptr));
+        start_label->setText(QApplication::translate("MainWindow", "D\303\251part:", nullptr));
+        height_label->setText(QApplication::translate("MainWindow", "Hauteur", nullptr));
+        width_label->setText(QApplication::translate("MainWindow", "Largeur", nullptr));
+        random_label->setText(QApplication::translate("MainWindow", "Position de d\303\251part et d'ariv\303\251e al\303\251atoire", nullptr));
         start_y_label->setText(QApplication::translate("MainWindow", "Y:", nullptr));
-        random_yes->setText(QApplication::translate("MainWindow", "Yes", nullptr));
+        random_yes->setText(QApplication::translate("MainWindow", "Oui", nullptr));
         start_x_label->setText(QApplication::translate("MainWindow", "X:", nullptr));
-        goal_label->setText(QApplication::translate("MainWindow", "Goal:", nullptr));
+        goal_label->setText(QApplication::translate("MainWindow", "Arriv\303\251e:", nullptr));
     } // retranslateUi
 
 };
