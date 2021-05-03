@@ -78,12 +78,17 @@ node Labyrinth::getGoalNode()
 bool Labyrinth::findWay()
 {
 	find_path();
-	return status;
+    return status;
 }
 
 void Labyrinth::drawWay()
 {
 	draw_path();
+}
+
+int Labyrinth::getResult()
+{
+    return result;
 }
 
 void Labyrinth::printLabyrinth()
@@ -135,6 +140,7 @@ void Labyrinth::find_path()
 	calculateHCostForNode(start.x, start.y);
 	calculateFCostForNode(start.x, start.y);
 	unmarkedNodes.push_back(labyrinth[start.x][start.y]);
+    result=0;
 	while (unmarkedNodes.size() != 0)
 	{
 		node current = lowestFCostNode(unmarkedNodes);
@@ -143,6 +149,10 @@ void Labyrinth::find_path()
 			goal = labyrinth[goal.x][goal.y];
 			start = labyrinth[start.x][start.y];
 			status = true;
+            if (result == 0) {
+                // set result à 1 pour dire que le pathfinding à fait son chemin sans tomber dans un piège
+                result = 1;
+            }
 			return;
 		}
 		unmarkedNodes.erase(find(unmarkedNodes.begin(), unmarkedNodes.end(), current));
@@ -165,6 +175,9 @@ void Labyrinth::find_path()
 				if (find(unmarkedNodes.begin(), unmarkedNodes.end(), labyrinth[x][y]) == unmarkedNodes.end()) unmarkedNodes.push_back(labyrinth[x][y]);
 			}
 		}
+        if (current.typeOfCell == 3) {
+            result = 2;
+        }
 	}
 	status = false;
 }
@@ -172,22 +185,22 @@ void Labyrinth::find_path()
 void Labyrinth::draw_path()
 {
 	node currentNode = goal;
-	while (currentNode != start)
-	{
-		if (currentNode != goal && currentNode != start)
-		{
+    while (currentNode != start)
+    {
+        if (currentNode != goal && currentNode != start)
+        {
             if (currentNode.typeOfCell == 1) {
                 labyrinth[currentNode.x][currentNode.y].typeOfCell = MUD_PATH_SYMBOL;
             }
             else if (currentNode.typeOfCell == 3) {
                 labyrinth[currentNode.x][currentNode.y].typeOfCell = TRAP_PATH_SYMBOL;
             }
-			else
-			{
-				labyrinth[currentNode.x][currentNode.y].typeOfCell = PATH_SYMBOL;
-			}
-		}
-		else if (currentNode == start) return;
-		currentNode = labyrinth[currentNode.parentX][currentNode.parentY];
-	}
+            else
+            {
+                labyrinth[currentNode.x][currentNode.y].typeOfCell = PATH_SYMBOL;
+            }
+        }
+        else if (currentNode == start) return;
+        currentNode = labyrinth[currentNode.parentX][currentNode.parentY];
+    }
 }

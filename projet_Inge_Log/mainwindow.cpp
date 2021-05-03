@@ -102,6 +102,13 @@ void MainWindow::on_show_button_clicked()
             lab.drawWay();
             Widget *w = new Widget(cellSize, width, height, lab.getLabyrinth());
             w->show();
+            if (lab.getResult() == 1) {
+                std::cout << "A* est arrivé sur goal, A* a gagné" << std::endl;
+            }
+            else if (lab.getResult() == 2) {
+                std::cout << "A* est tombé dans un piége, A* a perdu" << std::endl;
+            }
+
         }
         else{
            QMessageBox::critical(this, "A* message", "A* n'a pas trouvé le chemin");

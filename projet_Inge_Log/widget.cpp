@@ -59,7 +59,7 @@ void Widget::paintEvent(QPaintEvent *event)
 
             }
             else if(map[x/cellSize][y/cellSize].typeOfCell == 9){
-                 painter.setBrush(QBrush(trapRoadColor, Qt::SolidPattern));
+                 painter.setBrush(QBrush(Qt::yellow, Qt::SolidPattern));
                  painter.drawRect(QRect(QPoint(x, y), QSize(cellSize, cellSize)));
 
             }

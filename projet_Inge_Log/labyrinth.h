@@ -12,13 +12,16 @@ public:
 	void printLabyrinth();
 	void printDebug();
     node **getLabyrinth();
+    int getResult();
 private:
 	node** labyrinth;
 	node start;
 	node goal;
+    int result;
 	int height;
 	int width;
 	bool status;
+    bool trapped;
 	void calculateHCostForNode(int x, int y);
 	void calculateFCostForNode(int x, int y);
 	void find_path();
