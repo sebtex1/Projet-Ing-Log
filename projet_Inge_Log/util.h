@@ -29,12 +29,16 @@ node lowestFCostNode(std::vector<node>);
 int calculateNeighboursCosts(node current, node parent);
 
 const short int CLEAN_ROAD_WEIGHT = 1;
-const int DIRTY_ROAD_WEIGHT = 5;
+const int MUD_ROAD_WEIGHT = 5;
+const int TRAP_ROAD_WEIGHT = 10;
 
 const short int SPACE_SYMBOL = 0;
-const short int DIRTY_CELL_SYMBOL = 1;
+const short int MUD_CELL_SYMBOL = 1;
 const short int WALL_SYMBOL = 2;
-const short int START_SYMBOL = 3;
-const short int FINISH_SYMBOL = 4;
+const short int TRAP_SYMBOL = 3;
+const short int START_SYMBOL = 4;
+const short int FINISH_SYMBOL = 5;
 const short int PATH_SYMBOL = 7;
-const short int DIRTY_PATH_SYMBOL = 8;
+const short int MUD_PATH_SYMBOL = 8;
+const short int TRAP_PATH_SYMBOL = 9;
+

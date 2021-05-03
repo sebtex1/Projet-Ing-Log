@@ -35,10 +35,15 @@ node lowestFCostNode(std::vector<node> nodes)
 	return minFCostNode;
 }
 
+// Calcul du poid de la cellule prochaine
 int calculateNeighboursCosts(node current, node parent)
 {
-	if (current.typeOfCell == 1) return round(sqrt(pow((parent.x - current.x) + DIRTY_ROAD_WEIGHT, 2) + pow((parent.y - current.y) + DIRTY_ROAD_WEIGHT, 2)) * 10);
-	return round(sqrt(pow((parent.x - current.x), 2) + pow((parent.y - current.y), 2)) * 10);
+    // Cellule boue
+    if (current.typeOfCell == 1) return round(sqrt(pow((parent.x - current.x) + MUD_ROAD_WEIGHT, 2) + pow((parent.y - current.y) + MUD_ROAD_WEIGHT, 2)) * 10);
+    // Cellule piege
+    else if (current.typeOfCell == 3) return round(sqrt(pow((parent.x - current.x) + TRAP_ROAD_WEIGHT, 2) + pow((parent.y - current.y) + TRAP_ROAD_WEIGHT, 2)) * 10);
+    // Cellule vide
+    return round(sqrt(pow((parent.x - current.x), 2) + pow((parent.y - current.y), 2)) * 10);
 }
 
 void node::calculateFCost()

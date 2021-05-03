@@ -88,7 +88,7 @@ void MainWindow::on_goal_y_box_valueChanged(int arg1)
 void MainWindow::on_show_button_clicked()
 {
     if ((goal_x <= 0 || goal_y <= 0 || start_x <= 0 || start_y <= 0 || width <= 0 || height <= 0) && random == false){
-        QMessageBox::warning(this, "Size error", "Are you sure that all sizes are properly initialized?");
+        QMessageBox::warning(this, "Size error", "Vérifiez que les valeurs sont bien initialisées?");
     }
     else{
         int cellSize = 0;
@@ -104,7 +104,7 @@ void MainWindow::on_show_button_clicked()
             w->show();
         }
         else{
-           QMessageBox::critical(this, "A* message", "A* didn't find the path");
+           QMessageBox::critical(this, "A* message", "A* n'a pas trouvé le chemin");
        }
    }
 }

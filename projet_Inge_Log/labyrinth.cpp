@@ -58,7 +58,7 @@ Labyrinth::Labyrinth(int width, int height, bool random, int start_x, int start_
 					goal.typeOfCell = FINISH_SYMBOL;
 				}
 				else
-					labyrinth[x][y].typeOfCell = rand() % 3;
+                    labyrinth[x][y].typeOfCell = rand() % 4;
 			}
 		}
 	}
@@ -176,8 +176,12 @@ void Labyrinth::draw_path()
 	{
 		if (currentNode != goal && currentNode != start)
 		{
-			if (currentNode.typeOfCell == 1)
-				labyrinth[currentNode.x][currentNode.y].typeOfCell = DIRTY_PATH_SYMBOL;
+            if (currentNode.typeOfCell == 1) {
+                labyrinth[currentNode.x][currentNode.y].typeOfCell = MUD_PATH_SYMBOL;
+            }
+            else if (currentNode.typeOfCell == 3) {
+                labyrinth[currentNode.x][currentNode.y].typeOfCell = TRAP_PATH_SYMBOL;
+            }
 			else
 			{
 				labyrinth[currentNode.x][currentNode.y].typeOfCell = PATH_SYMBOL;
