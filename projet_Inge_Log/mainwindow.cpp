@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <string>
 #include "QDebug"
+#include "bdd.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,6 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->width_box->setMaximum(100);
     ui->height_box->setMaximum(100);
     random = true;
+    //connexion bdd pour sauvegarde
+    QString path = "D://Workspace//Projet-Ing-Log//AStarBDD.db";     //Chemin BDD//
+    QSqlDatabase sqlitedb = QSqlDatabase::addDatabase("QSQLITE");
+    sqlitedb.setDatabaseName(path);
+    sqlitedb.open();
 }
 
 MainWindow::~MainWindow()
@@ -104,20 +110,14 @@ void MainWindow::on_show_button_clicked()
             lab.drawWay();
             Widget *w = new Widget(cellSize, width, height, lab.getLabyrinth());
             w->show();
-            int result=0;
-            result=w->getResultWidget();
-            int *result2;
-            *result2 = result;
-            std::string strWin = "A* est arrivée au goal en, A* a gagné";
-            strWin += std::to_string(result);
-            qDebug()<<2<<*result2;
-            qDebug()<<3<<w->getResultWidget();
-
+            QSqlQuery qry;
             if (lab.getResult() == 1) {
-                QMessageBox::information(this, "A* message", "strWin");
+                QMessageBox::information(this, "A* message", "A* est arrivée au goal en, A* a gagné");
+                qry.exec("INSERT INTO Tests(result) VALUES('WIN')");
             }
             else if (lab.getResult() == 2) {
                 QMessageBox::critical(this, "A* message", "A* est tombé dans un piége, A* a perdu");
+                qry.exec("INSERT INTO Tests(result) VALUES('LOSE')");
             }
 
         }
@@ -125,4 +125,17 @@ void MainWindow::on_show_button_clicked()
            QMessageBox::critical(this, "A* message", "A* n'a pas trouvé le chemin");
        }
    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QSqlQuery query;
+    query.prepare("SELECT result FROM Tests");
+    if (query.exec()) {
+        QString nameRow = "";
+        while (query.next()) {
+            nameRow = nameRow + query.value(0).toString() + "; ";
+            ui -> textEdit -> setText(nameRow);
+        }
+    }
 }

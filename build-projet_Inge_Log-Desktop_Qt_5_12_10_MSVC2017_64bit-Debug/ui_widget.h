@@ -23,7 +23,7 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(400, 300);
+        Widget->resize(529, 521);
 
         retranslateUi(Widget);
 

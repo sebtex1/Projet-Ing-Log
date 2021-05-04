@@ -18,7 +18,7 @@ void Widget::paintEvent(QPaintEvent *event)
     bool win = true;
     QPainter painter(this);
     QColor dirtyRoadColor = qRgb(255, 0, 255);
-    QColor trapRoadColor = qRgb(142, 1, 130);
+    QColor orange = qRgb(254,123,1);
     for (int y = 0; y < height*cellSize; y+=cellSize){
         for (int x = 0; x < width*cellSize; x+=cellSize){
             if (map[x/cellSize][y/cellSize].typeOfCell == 0){
@@ -37,7 +37,7 @@ void Widget::paintEvent(QPaintEvent *event)
 
             }
             else if(map[x/cellSize][y/cellSize].typeOfCell == 3){
-                 painter.setBrush(QBrush(Qt::blue, Qt::SolidPattern));
+                 painter.setBrush(QBrush(Qt::darkRed, Qt::SolidPattern));
                  painter.drawRect(QRect(QPoint(x, y), QSize(cellSize, cellSize)));
 
             }
@@ -47,7 +47,7 @@ void Widget::paintEvent(QPaintEvent *event)
 
             }
             else if(map[x/cellSize][y/cellSize].typeOfCell == 5){
-                painter.setBrush(QBrush(Qt::red, Qt::SolidPattern));
+                painter.setBrush(QBrush(Qt::blue, Qt::SolidPattern));
                 painter.drawRect(QRect(QPoint(x, y), QSize(cellSize, cellSize)));
 
             }
@@ -58,13 +58,13 @@ void Widget::paintEvent(QPaintEvent *event)
 
             }
             else if(map[x/cellSize][y/cellSize].typeOfCell == 8){
-                 painter.setBrush(QBrush(dirtyRoadColor, Qt::SolidPattern));
+                 painter.setBrush(QBrush(orange, Qt::SolidPattern));
                  painter.drawRect(QRect(QPoint(x, y), QSize(cellSize, cellSize)));
                  _result ++;
 
             }
             else if(map[x/cellSize][y/cellSize].typeOfCell == 9){
-                 painter.setBrush(QBrush(Qt::yellow, Qt::SolidPattern));
+                 painter.setBrush(QBrush(Qt::red, Qt::SolidPattern));
                  painter.drawRect(QRect(QPoint(x, y), QSize(cellSize, cellSize)));
                  win = false;
 

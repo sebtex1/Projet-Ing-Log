@@ -18,6 +18,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -46,12 +47,14 @@ public:
     QSpinBox *width_box;
     QLabel *start_x_label;
     QLabel *goal_label;
+    QPushButton *pushButton;
+    QTextEdit *textEdit;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(274, 274);
+        MainWindow->resize(509, 298);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
@@ -150,6 +153,12 @@ public:
 
         gridLayout->addWidget(goal_label, 6, 1, 1, 1);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(100, 260, 80, 21));
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(280, 30, 211, 251));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -173,6 +182,7 @@ public:
         random_yes->setText(QApplication::translate("MainWindow", "Oui", nullptr));
         start_x_label->setText(QApplication::translate("MainWindow", "X:", nullptr));
         goal_label->setText(QApplication::translate("MainWindow", "Arriv\303\251e:", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Resume", nullptr));
     } // retranslateUi
 
 };

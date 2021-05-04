@@ -39,6 +39,8 @@ private slots:
 
     void on_show_button_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     int width;
