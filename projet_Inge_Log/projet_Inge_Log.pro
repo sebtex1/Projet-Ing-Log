@@ -1,5 +1,6 @@
 QT       += core gui sql core
 QT       += network
+QT       +=core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,6 +13,7 @@ CONFIG += c++11
 SOURCES += \
     bdd.cpp \
     finish.cpp \
+    labyrinth.cpp \
     main.cpp \
     mainwindow.cpp \
     mud.cpp \
@@ -20,11 +22,14 @@ SOURCES += \
     start.cpp \
     tests.cpp \
     trap.cpp \
-    wall.cpp
+    util.cpp \
+    wall.cpp \
+    widget.cpp
 
 HEADERS += \
     bdd.h \
     finish.h \
+    labyrinth.h \
     mainwindow.h \
     mud.h \
     niveaux.h \
@@ -32,10 +37,13 @@ HEADERS += \
     start.h \
     tests.h \
     trap.h \
-    wall.h
+    util.h \
+    wall.h \
+    widget.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

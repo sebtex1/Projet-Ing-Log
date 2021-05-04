@@ -1,0 +1,15 @@
+release/bdd.o
+release/finish.o
+release/main.o
+release/mainwindow.o
+release/mud.o
+release/niveaux.o
+release/obstacles.o
+release/pathfinders.o
+release/start.o
+release/trap.o
+release/wall.o
+release/moc_bdd.o
+release/moc_mainwindow.o
+release/moc_niveaux.o
+release/moc_obstacles.o

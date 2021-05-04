@@ -6,36 +6,158 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>509</width>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textMap">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>241</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Attributs et taille du labyrinthe</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="4">
+      <widget class="QSpinBox" name="height_box"/>
+     </item>
+     <item row="3" column="3">
+      <widget class="QRadioButton" name="random_no">
+       <property name="text">
+        <string>Non</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QSpinBox" name="start_x_box"/>
+     </item>
+     <item row="7" column="3">
+      <widget class="QLabel" name="goal_y_label">
+       <property name="text">
+        <string>Y:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="4">
+      <widget class="QSpinBox" name="goal_y_box"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="goal_x_label">
+       <property name="text">
+        <string>X:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2" colspan="2">
+      <widget class="QPushButton" name="show_button">
+       <property name="text">
+        <string>Show</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="start_label">
+       <property name="text">
+        <string>Départ:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="4">
+      <widget class="QSpinBox" name="start_y_box"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="height_label">
+       <property name="text">
+        <string>Hauteur</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="width_label">
+       <property name="text">
+        <string>Largeur</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="4">
+      <widget class="QLabel" name="random_label">
+       <property name="text">
+        <string>Position de départ et d'arivée aléatoire</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QLabel" name="start_y_label">
+       <property name="text">
+        <string>Y:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QSpinBox" name="goal_x_box"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="random_yes">
+       <property name="text">
+        <string>Oui</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QSpinBox" name="width_box"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLabel" name="start_x_label">
+       <property name="text">
+        <string>X:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="goal_label">
+       <property name="text">
+        <string>Arrivée:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>180</y>
-      <width>561</width>
-      <height>70</height>
+      <y>260</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Resume</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>211</width>
+      <height>251</height>
      </rect>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
