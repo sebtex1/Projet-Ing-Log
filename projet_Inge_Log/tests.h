@@ -23,9 +23,9 @@ public:
    }
 
 private:
-   QTimer *m_Timer;
-   QString *m_Name;
-   QDate *m_Date;
+   int id;
+   int idLevel;
+   QDate *datePassage;
    bool result;
 
 };
