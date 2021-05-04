@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <string>
+#include "QDebug"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -102,8 +104,17 @@ void MainWindow::on_show_button_clicked()
             lab.drawWay();
             Widget *w = new Widget(cellSize, width, height, lab.getLabyrinth());
             w->show();
+            int result=0;
+            result=w->getResultWidget();
+            int *result2;
+            *result2 = result;
+            std::string strWin = "A* est arrivée au goal en, A* a gagné";
+            strWin += std::to_string(result);
+            qDebug()<<2<<*result2;
+            qDebug()<<3<<w->getResultWidget();
+
             if (lab.getResult() == 1) {
-                QMessageBox::information(this, "A* message", "A* est arrivée au goal, A* a gagné");
+                QMessageBox::information(this, "A* message", "strWin");
             }
             else if (lab.getResult() == 2) {
                 QMessageBox::critical(this, "A* message", "A* est tombé dans un piége, A* a perdu");
