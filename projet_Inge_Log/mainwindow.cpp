@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->height_box->setMaximum(100);
     random = true;
     //connexion bdd pour sauvegarde
-    QString path = "D://Workspace//Projet-Ing-Log//AStarBDD.db";     //Chemin BDD//
+    QString path = "D://Workspace//Projet-Ing-Log//AStarBDD.db";     //Chemin BDD//A modifier lors des builds sur chaque PC
     QSqlDatabase sqlitedb = QSqlDatabase::addDatabase("QSQLITE");
     sqlitedb.setDatabaseName(path);
     sqlitedb.open();
